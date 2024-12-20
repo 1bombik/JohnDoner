@@ -5,9 +5,9 @@ from keyboard import open_workday, close_workday
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, User, Hour
-from private_data import admins
+from private_data import admins, data_base
 
-engine = create_engine('postgresql://dima:d1ma@localhost:5432/johndoner')
+engine = create_engine(data_base)
 Session = sessionmaker(bind=engine)
 session = Session()
 
